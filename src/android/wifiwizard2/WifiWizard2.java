@@ -2057,12 +2057,12 @@ public class WifiWizard2 extends CordovaPlugin {
         WifiNetworkSpecifier.Builder builder = new WifiNetworkSpecifier.Builder();
         builder.setSsid(SSID);
 
-        if(Algorithm.matches("/WEP|WPA|WPA2/gim") && PASS != '')
+        if(Algorithm.matches("/WEP|WPA|WPA2/gim") && PASS.length() > 0)
         {
           builder.setWpa2Passphrase(PASS);
         }
 
-        if(Algorithm.matches("/WPA3/gim") && PASS != '')
+        if(Algorithm.matches("/WPA3/gim") && PASS.length() > 0)
         {
           builder.setWpa3Passphrase(PASS);
         }
